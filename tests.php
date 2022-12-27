@@ -1,15 +1,24 @@
+#!/usr/local/bin/php
 <?php
 
 use App\Budget;
-use App\TaxCalculator;
-use App\Taxes\ICMS;
+use App\DiscountCalculator;
 
 require 'vendor/autoload.php';
 
 
-$calculator = new TaxCalculator;
+// $calculator = new TaxCalculator;
 
+// $budget = new Budget;
+// $budget->value = 100;
+
+// echo $calculator->calculate($budget, new ICMS) . "\n";
+
+
+$calculator = new DiscountCalculator;
 $budget = new Budget;
-$budget->value = 100;
 
-echo $calculator->calculate($budget, new ICMS) . "\n";
+$budget->value = 600;
+$budget->itens = 5;
+
+echo $calculator->calculateDiscount($budget) . PHP_EOL;
