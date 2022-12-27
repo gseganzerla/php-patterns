@@ -19,6 +19,6 @@ $calculator = new DiscountCalculator;
 $budget = new Budget;
 
 $budget->value = 600;
-$budget->itens = 5;
+$budget->itens = 6;
 
 echo $calculator->calculateDiscount($budget) . PHP_EOL;

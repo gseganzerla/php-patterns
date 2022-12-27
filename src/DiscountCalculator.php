@@ -2,18 +2,17 @@
 
 namespace App;
 
+use App\Discounts\DiscountGreaterThan5Itens;
+use App\Discounts\DiscountGreaterThan500BRL;
+use App\Discounts\NoDiscount;
+
 class DiscountCalculator
 {
     public function calculateDiscount(Budget $budget): float
     {
-        if ($budget->itens > 5) {
-            return $budget->value * .1;
-        }
 
-        if ($budget->value > 500) {
-            return $budget->value * .05;
-        }
+        $chainOfDiscounts = new DiscountGreaterThan5Itens(new DiscountGreaterThan500BRL(new NoDiscount()));
 
-        return 0;
+        return $chainOfDiscounts->calculateDiscount($budget);
     }
 }
