@@ -10,3 +10,14 @@ O Strategy depende de que a classe que vai ser utilizada saiba qual a estrategia
 
 
  Este padrao pode ser utilizado quando ha a necessidade de tomar uma decisao durante a execulsão do codigo
+
+
+ Template Method
+
+
+ Ter a base do algoritimo em uma classe base e nas classes filhas implementamos o algoritimo especifico de cada classe
+ 
+ Onde chamamos metodos especificos de uma classe pai (Modelo padrao)
+
+ implementamos apenas as partes especificas 
+ e quanto a logica padrao vem da classe pai
