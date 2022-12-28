@@ -21,3 +21,8 @@ O Strategy depende de que a classe que vai ser utilizada saiba qual a estrategia
 
  implementamos apenas as partes especificas 
  e quanto a logica padrao vem da classe pai
+
+
+ State
+os estados geralmente se conhecem enquanto as strategies não
+ os estados particulares podem estar cientes uns dos outros e iniciar transições de um estado para outro, enquanto as estratégias quase nunca se conhecem.
