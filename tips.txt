@@ -26,3 +26,12 @@ O Strategy depende de que a classe que vai ser utilizada saiba qual a estrategia
  State
 os estados geralmente se conhecem enquanto as strategies não
  os estados particulares podem estar cientes uns dos outros e iniciar transições de um estado para outro, enquanto as estratégias quase nunca se conhecem.
+
+ Command
+
+ abstrai uma funcionalidade em classes separadas para que tal funcionalidade funcione independentemente
+ de onde os dados vem.
+
+ Muito comum e considerabo boa pratica separar a representação do comando e o handler para execultar em cases diferentes
+
+ para que a representação do comando nao fique suja com outras injecoes
