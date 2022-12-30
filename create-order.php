@@ -1,6 +1,7 @@
 <?php
 
 use App\CreateOrder;
+use App\HandlerCreateOrder;
 
 require_once "vendor/autoload.php";
 
@@ -10,7 +11,9 @@ $clientName = $argv[3];
 
 
 $createOrder = new CreateOrder(valueBudget: $value, items: $items, clientName: $clientName);
-$createOrder->execute();
+
+$handlerCreateOrder = new HandlerCreateOrder();
+$handlerCreateOrder->execute($createOrder);
 
 
 echo "Cria pedido no banco de dados" . PHP_EOL;
