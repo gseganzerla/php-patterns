@@ -1,0 +1,6 @@
+Adapter
+Basicamente depencency inversion
+
+
+criamos uma interface que seja comum a varias classes para q os serviços do meu projeto
+não utilize a classe concreta e sim sua abstração, sua interface.
