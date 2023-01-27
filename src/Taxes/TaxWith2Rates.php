@@ -6,9 +6,9 @@ namespace App\Taxes;
 use App\Budget;
 use App\Taxes\Contracts\Tax;
 
-abstract class TaxWith2Rates implements Tax
+abstract class TaxWith2Rates extends Tax
 {
-    public function calculate(Budget $budget): float
+    public function specificCalculation(Budget $budget): float
     {
         if ($this->mustApplyMaxiumTax($budget)) {
             return $this->calculateMaximumTax($budget);
