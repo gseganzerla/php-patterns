@@ -12,7 +12,11 @@ class DiscountCalculator
     {
 
         $chainOfDiscounts = new DiscountGreaterThan5Itens(new DiscountGreaterThan500BRL(new NoDiscount()));
+        $discount =  $chainOfDiscounts->calculateDiscount($budget);
 
-        return $chainOfDiscounts->calculateDiscount($budget);
+        $logDiscount = new LogDiscount;
+        $logDiscount->info($discount);
+
+        return $discount;
     }
 }
