@@ -1,10 +1,12 @@
 <?php
 
 
-namespace App;
+namespace App\Order;
+
+use App\Budget;
 
 class Order
 {
-    public OrderExtrinsicData $data;
+    public OrderTemplate $template;
     public Budget $budget;
 }

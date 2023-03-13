@@ -1,11 +1,11 @@
 <?php
 
 
-namespace App;
+namespace App\Order;
 
 use DateTimeInterface;
 
-class OrderExtrinsicData
+class OrderTemplate
 {
 
     public function __construct( private string $clientName,  private DateTimeInterface $finalizedAt) 

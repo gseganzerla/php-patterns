@@ -1,24 +1,21 @@
 <?php
 
 use App\Budget;
-use App\Order;
-use App\OrderExtrinsicData;
+use App\Order\Order;
+use App\Order\OrderCreator;
+use App\Order\OrderTemplate;
 
 require 'vendor/autoload.php';
 
 
 $orders = [];
+$orderCreator = new OrderCreator;
 
-$today = new DateTimeImmutable;
-
-$data = new OrderExtrinsicData(md5("a"), $today);
+$data = new OrderTemplate(md5("a"), new DateTimeImmutable);
 
 for ($i = 0; $i < 10000; $i++) {
-    $order = new Order;
-    $order->budget = new Budget;
-    $order->data = $data;
-
-    $orders[] = $order;
+    $budget = new Budget;
+    $order = $orderCreator->create('Guilherme', date('Y-m-d'), $budget);
 }
 
 
