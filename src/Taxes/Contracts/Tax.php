@@ -7,7 +7,7 @@ use App\Budget;
 
 abstract class Tax
 {
-    public function __construct(private ?Tax $tax)
+    public function __construct(private ?Tax $tax = null)
     {
     }
 
