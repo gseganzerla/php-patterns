@@ -3,6 +3,7 @@
 namespace App\Invoice;
 
 use App\BudgetItem;
+use DateTimeImmutable;
 use DateTimeInterface;
 
 class Invoice
@@ -27,5 +28,23 @@ class Invoice
             0
         );
     }
+
+    public function __clone()
+    {
+        $this->createdAt = new DateTimeImmutable;
+    }
+
+// public function clone() 
+// {
+//     $clonedInvoice = new Invoice;
+//     $clonedInvoice->nrl = $this->nrl;
+//     $clonedInvoice->bussinesName = $this->bussinesName;
+//     $clonedInvoice->items = $this->items;
+//     $clonedInvoice->observations = $this->observations;
+//     $clonedInvoice->createdAt = $this->createdAt;
+//     $clonedInvoice->taxesValues = $this->taxesValues;
+
+//     return $clonedInvoice;
+// }
 
 }
