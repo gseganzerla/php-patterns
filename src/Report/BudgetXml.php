@@ -3,10 +3,11 @@
 
 namespace App\Report;
 use App\Budget;
+use App\Report\Contracts\ExportedContent;
 use SimpleXMLElement;
 
 
-class BudgetXml{
+class BudgetXml implements ExportedContent{
     public function export(Budget $budget): string 
     {
         $element = new SimpleXMLElement('<budget/>');
